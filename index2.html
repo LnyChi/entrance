@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通行证</title>
+    <link rel="stylesheet" href="./css/util.css">
+</head>
+
+<body>
+    <div id="app">
+        <div data-v-752aeb8e="" class="content warn">
+            <div data-v-752aeb8e="" class="card">
+                <div data-v-752aeb8e=""></div>
+                <p data-v-752aeb8e="" class="school-name">福建师范大学</p>
+                <header data-v-752aeb8e=""><img data-v-752aeb8e="" src="./img/passport_bg0.39f684ac.png" alt=""
+                        class="bg">
+                    <!---->
+                    <!---->
+                    <!----><img data-v-752aeb8e="" src="./img/passport_zh0.cfea5396.png" alt="" class="font-zh">
+                    <!---->
+                    <!---->
+                    <!----><span data-v-752aeb8e="" class="font-en">平安校园，共同守护</span>
+                </header>
+                <main data-v-752aeb8e="">
+                    <div data-v-752aeb8e="" class="van-row">
+                        <div data-v-752aeb8e="" class="van-col van-col--12">
+                            <p data-v-752aeb8e="" class="label"> 学生 / Name: </p>
+                            <p data-v-752aeb8e="">林玉炽</p>
+                            <div data-v-752aeb8e="">
+                                <p data-v-752aeb8e="" class="label">学号 / No:</p>
+                                <p data-v-752aeb8e="">124182018100</p>
+                            </div>
+                            <!---->
+                            <div data-v-752aeb8e="">
+                                <p data-v-752aeb8e="" class="label">院系 / Dept:</p>
+                                <p data-v-752aeb8e="">协和学院-国际商学系</p>
+                            </div>
+                            <!---->
+                            <!---->
+                            <!---->
+                            <p data-v-752aeb8e="" class="label">有效期 / Time:</p>
+                            <p data-v-752aeb8e="" class="expriceTime"> 2022-06-16 23:59止 </p>
+                            <!---->
+                            <!---->
+                        </div>
+                        <div data-v-752aeb8e="" class="van-col van-col--12"><img data-v-752aeb8e=""
+                                src="https://user-images.githubusercontent.com/53613078/174060874-4c96c56d-02ff-4e13-8c3c-4b6269a846d2.jpg"
+                                alt=""></div>
+                    </div>
+                </main>
+                <div data-v-752aeb8e="" class="_fot">
+                    <div data-v-752aeb8e="" class="welcome">
+                        <div data-v-752aeb8e="" class="entrance">旗山校区-小东门-出方向2</div>
+                    </div>
+                    <footer data-v-752aeb8e="">
+                        <div data-v-752aeb8e="" class="timer-box van-count-down"><span data-v-752aeb8e=""
+                                class="block bg-box-2"><em data-v-752aeb8e="" class="hour">18</em></span><span
+                                data-v-752aeb8e="" class="colon">:</span><span data-v-752aeb8e=""
+                                class="block bg-box-2"><em data-v-752aeb8e="" class="min">43</em></span><span
+                                data-v-752aeb8e="" class="colon">:</span><span data-v-752aeb8e=""
+                                class="block bg-box-2"><em data-v-752aeb8e="" class="second">05</em></span><span
+                                data-v-752aeb8e="" class="colon">:</span><span data-v-752aeb8e=""
+                                class="block w-3 bg-box-3"><em data-v-752aeb8e="" class="milliseconds">030</em></span>
+                        </div>
+                        <div data-v-752aeb8e="" role="separator"
+                            class="divider van-divider van-divider--hairline van-divider--content-center"
+                            style="color: rgb(212, 106, 60);">2022年06月16日</div>
+                    </footer>
+                </div>
+                <div data-v-752aeb8e="" class="footer">
+                    <p data-v-752aeb8e="" class="company">技术支持：福州校企邦网络科技有限公司</p>
+                </div>
+            </div>
+        </div>
+        <!---->
+    </div>
+</body>
+<script>
+    var date = new Date();
+    var year = date.getFullYear().toString().padStart(4, "0");
+    var month = (date.getMonth() + 1).toString().padStart(2, "0");
+    var day = (date.getDate() + 1).toString().padStart(2, "0");
+    document.querySelector('.expriceTime').innerText = `${year}-${month}-${day} 23:59止`
+    document.querySelector('.divider').innerText = `${year}年${month}月${day}日`
+
+
+
+
+    setInterval(() => {
+        var d = new Date();
+        var hour = d.getHours().toString().padStart(2, "0");
+        var minute = d.getMinutes().toString().padStart(2, "0");
+        var second = d.getSeconds().toString().padStart(2, "0");
+        var getMilliseconds = d.getMilliseconds().toString().padStart(3, "0");
+        document.querySelector('.hour').innerText = hour
+        document.querySelector('.min').innerText = minute
+        document.querySelector('.second').innerText = second
+        document.querySelector('.milliseconds').innerText = getMilliseconds
+    }, 50)
+    function getDateString(date) {
+        var hour = date.getHours().toString().padStart(2, "0");
+        var minute = date.getMinutes().toString().padStart(2, "0");
+        var second = date.getSeconds().toString().padStart(2, "0");
+        return `${year}- ${month}-${day} ${hour}:${minute}:${second}`;
+    }
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) { return pair[1]; }
+        }
+        return (false);
+    }
+    if(getQueryVariable('entrance')){
+        document.querySelector('.entrance').innerText = decodeURI(getQueryVariable('entrance'))
+    }
+</script>
+
+</html>
