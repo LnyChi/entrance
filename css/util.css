@@ -15,8 +15,8 @@ p {
   padding: 0;
 }
 * {
-  font-size: 3.733vw;
-  content: "viewport-units-buggyfill; font-size: 3.733vw";
+  /* font-size: 3.733vw; */
+  /* content: "viewport-units-buggyfill; font-size: 3.733vw"; */
 }
 body,
 html {
@@ -413,7 +413,7 @@ p[data-v-752aeb8e] {
 }
 [data-v-752aeb8e] {
   font-size: 3.733vw;
-  content: "viewport-units-buggyfill; font-size: 3.733vw";
+  /* content: "viewport-units-buggyfill; font-size: 3.733vw"; */
 }
 body[data-v-752aeb8e],
 html[data-v-752aeb8e] {
